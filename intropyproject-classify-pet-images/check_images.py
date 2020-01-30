@@ -2,25 +2,27 @@
 # -*- coding: utf-8 -*-
 # */AIPND-revision/intropyproject-classify-pet-images/check_images.py
 #
-# TODO 0: Add your information below for Programmer & Date Created.                                                                             
+# TODO 0: Add your information below for Programmer & Date Created.
 # PROGRAMMER: Jeremie Faye
-# DATE CREATED: 30/01/2020                                 
-# REVISED DATE:  30/01/2020
-# PURPOSE: Classifies pet images using a pretrained CNN model, compares these
-#          classifications to the true identity of the pets in the images, and
-#          summarizes how well the CNN performed on the image classification task. 
-#          Note that the true identity of the pet (or object) in the image is 
-#          indicated by the filename of the image. Therefore, your program must
-#          first extract the pet image label from the filename before
-#          classifying the images using the pretrained CNN model. With this 
-#          program we will be comparing the performance of 3 different CNN model
-#          architectures to determine which provides the 'best' classification.
+# DATE CREATED: 30/01/2020
+# REVISED DATE: 30/01/2020
+# PURPOSE:  Classifies pet images using a pretrained CNN model, compares these
+#           classifications to the true identity of the pets in the images, and
+#           summarizes how well the CNN performed on the image classification
+#           task.
+#           Note that the true identity of the pet (or object) in the image is
+#           indicated by the filename of the image. Therefore, your program
+#           must first extract the pet image label from the filename before
+#           classifying the images using the pretrained CNN model. With this
+#           program we will be comparing the performance of 3 different CNN
+#           model architectures to determine which provides the 'best'
+#           classification.
 #
 # Use argparse Expected Call with <> indicating expected user input:
 #      python check_images.py --dir <directory with images> --arch <model>
 #             --dogfile <file that contains dognames>
-#   Example call:
-#    python check_images_solution.py --dir pet_images/ --arch vgg --dogfile dognames.txt
+# Example call:
+# python check_images_solution.py --dir pet_images/ --arch vgg --dogfile dognames.txt
 ##
 
 # Imports python modules
@@ -41,6 +43,14 @@ from print_results import print_results
 def main():
     # TODO 0: Measures total program runtime by collecting start time
     start_time = time()
+
+    sleep(10)
+
+    end_time = time()
+    
+    tot_time = end_time - start_time
+    
+    print("\nTotal Elapsed Runtime: ", tot_time, " in seconds")
     
     # TODO 1: Define get_input_args function within the file get_input_args.py
     # This function retrieves 3 Command Line Arugments from user as input from
