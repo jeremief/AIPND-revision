@@ -19,13 +19,7 @@
 # Imports python modules
 from os import listdir
 
-# TODO 2: Define get_pet_labels function below please be certain to replace None
-#       in the return statement with results_dic dictionary that you create 
-#       with this function
-# 
-
-# Retrieve the filenames from folder pet_images/
-# filename_list = listdir("pet_images/")
+## Retrieve the filenames from folder pet_images/
 filenames = listdir("pet_images/")
 
 # Print 10 of the filenames from folder pet_images/
@@ -95,6 +89,5 @@ def get_pet_labels(image_dir):
     print("\nPrinting all key-value pairs in dictionary results_dic:")
     for key in results_dic:
         print("Filename=", key, "   Pet Label=", results_dic[key][0])
-    # Replace None with the results_dic dictionary that you created with this
-    # function
+
     return results_dic
