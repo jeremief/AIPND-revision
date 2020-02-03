@@ -40,4 +40,26 @@ def get_input_args():
     """
     # Replace None with parser.parse_args() parsed argument collection that 
     # you created with this function 
-    return None
+
+    # Creates Argument Parser object named parser
+    parser = argparse.ArgumentParser()
+
+    # Argument 1: that's a path to a folder
+    parser.add_argument('--dir', type = str, default = 'pet_images/', 
+                        help = 'path to the folder of pet images') 
+
+    # Argument 2: that's the CNN model architecture to use
+    parser.add_argument('--arch', type = str, default = 'resnet', 
+                        help = 'the CNN model architecture to use') 
+
+    # Argument 3: that's the file that contains the list of valid dognames
+    parser.add_argument('--dogfile', type = str, default = 'dognames.txt', 
+                        help = 'the file that contains the list of valid dognames') 
+
+    # Assigns variable in_args to parse_args()
+    in_args = parser.parse_args()
+
+    # Accesses values of Argument 1 by printing it
+    print("Argument 1:", in_args.dir, "\nArgument 2:", in_args.arch, "\nArgument 3:", in_args.dogfile)
+    # return parser.parse_args()
+    return in_args

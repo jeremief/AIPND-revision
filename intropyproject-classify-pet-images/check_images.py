@@ -44,7 +44,7 @@ def main():
     # TODO 0: Measures total program runtime by collecting start time
     start_time = time()
 
-    sleep(10)
+    sleep(1)
 
     end_time = time()
     
