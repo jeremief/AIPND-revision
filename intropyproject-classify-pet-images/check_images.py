@@ -46,11 +46,11 @@ def main():
 
     sleep(1)
 
-    end_time = time()
+    # end_time = time()
     
-    tot_time = end_time - start_time
+    # tot_time = end_time - start_time
     
-    print("\nTotal Elapsed Runtime: ", tot_time, " in seconds")
+    # print("\nTotal Elapsed Runtime: ", tot_time, " in seconds")
     
     # TODO 1: Define get_input_args function within the file get_input_args.py
     # This function retrieves 3 Command Line Arugments from user as input from
@@ -84,7 +84,7 @@ def main():
     #             classify_images(in_arg.dir, results, in_arg.arch)
     # Creates Classifier Labels with classifier function, Compares Labels, 
     # and adds these results to the results dictionary - results
-    classify_images(None, results, in_arg.arch)
+    classify_images(in_arg.dir, results, in_arg.arch)
 
     # Function that checks Results Dictionary using results    
     check_classifying_images(results)    

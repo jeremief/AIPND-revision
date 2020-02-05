@@ -30,9 +30,6 @@ from classifier import classifier
 #       data type so no return is needed.
 # 
 
-## Retrieve the filenames from folder pet_images/
-folder_path = "pet_images/"
-
 
 def classify_images(images_dir, results_dic, model):
     """
@@ -71,9 +68,7 @@ def classify_images(images_dir, results_dic, model):
            None - results_dic is mutable data type so no return needed.         
     """
     for key in results_dic:
-    # If first time key is assigned initialize the list with pet & 
-    # classifier labels
-        my_image = folder_path + key
+        my_image = images_dir + key
         image_classification = classifier(my_image, model).lower()
         label_match = 0
         if results_dic[key][0] in image_classification:
