@@ -39,7 +39,7 @@ def classify_images(images_dir, results_dic, model):
     format the classifier labels so that they will match your pet image labels.
     The format will include putting the classifier labels in all lower case 
     letters and strip the leading and trailing whitespace characters from them.
-    For example, the Classifier function returns = 'Maltese dog, Maltese terrier, Maltese' 
+    For example, the classifierr function returns = 'Maltese dog, Maltese terrier, Maltese' 
     so the classifier label = 'maltese dog, maltese terrier, maltese'.
     Recall that dog names from the classifier function can be a string of dog 
     names separated by commas when a particular breed of dog has multiple dog 
@@ -70,9 +70,17 @@ def classify_images(images_dir, results_dic, model):
     for key in results_dic:
         my_image = images_dir + key
         image_classification = classifier(my_image, model).lower()
+        image_class_analysis = image_classification.split(",")
+        for i in range(len(image_class_analysis)):
+            image_class_analysis[i] = image_class_analysis[i].lstrip().rstrip()
+            # print("Print image descrition: {}".format(image_description))
+        print("Result for the classifer is {}".format(image_class_analysis))
         label_match = 0
-        if results_dic[key][0] in image_classification:
-            label_match = 1
+        for description in image_class_analysis:
+            print("The truth is " + results_dic[key][0])
+            print("The description is " + description)
+            if results_dic[key][0] == description:
+                label_match = 1
         results_dic[key].append(image_classification)
         results_dic[key].append(label_match)
 

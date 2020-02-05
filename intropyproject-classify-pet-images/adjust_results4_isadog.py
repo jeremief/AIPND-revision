@@ -79,9 +79,9 @@ def adjust_results4_isadog(results_dic, dogfile):
         for dogname in dognames:
             if image_label in dogname:
                 # print("is a dog" + " " + dogname)
-                results_dic[key][2] = 1
-            if classifier_label in dogname:
                 results_dic[key][3] = 1
+            if classifier_label in dogname:
+                results_dic[key][4] = 1
 
         print("For {}, the result is {}".format(key, results_dic[key]))
                 # break
