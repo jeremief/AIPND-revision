@@ -74,11 +74,11 @@ def classify_images(images_dir, results_dic, model):
         for i in range(len(image_class_analysis)):
             image_class_analysis[i] = image_class_analysis[i].lstrip().rstrip()
             # print("Print image descrition: {}".format(image_description))
-        print("Result for the classifer is {}".format(image_class_analysis))
+        # print("Result for the classifer is {}".format(image_class_analysis))
         label_match = 0
         for description in image_class_analysis:
-            print("The truth is " + results_dic[key][0])
-            print("The description is " + description)
+            # print("The truth is " + results_dic[key][0])
+            # print("The description is " + description)
             if results_dic[key][0] == description:
                 label_match = 1
         results_dic[key].append(image_classification)
