@@ -68,44 +68,23 @@ def adjust_results4_isadog(results_dic, dogfile):
            None - results_dic is mutable data type so no return needed.
     """
     dognames = open(dogfile)
-    # print("dognames is {}".format(dognames))
+
     dogs_dic = {}
     for line in dognames:
-        # dogs_list.append(1)
-        # print("line is {}".format(line))
         line_list = line.split(",")
         for i in range(len(line_list)):
             line_item = line_list[i].lstrip().rstrip()
             if line_item not in dogs_dic:
                 dogs_dic[line_item] = 1
-            # else:
-                # print("{} is already in the dictionary.".format(line_item))
-
-    print("dogs_list is {}".format(dogs_dic))
 
     for key in results_dic:
         image_label = results_dic[key][0]
         classifier_label = results_dic[key][1]
-        # print(image_label, classifier_label)
-        #Set up image and classifier label flags 
+
         flags = [0,0]
-        print("*************** Working on {} with image_label {} and classifier_label {}".format(key, image_label, classifier_label))
+
         results_dic[key].extend(flags)
-        # for dog_description_string in dognames:
-        # # for j in range(len(dognames)):
-        #     dog_description_list = dog_description_string.lower().split(",")
-        #     # dog_description_list = dognames[j].lower().split(",")
-        #     print("dog_description_list is {}".format(dog_description_list))
-        #     for i in range(len(dog_description_list)):
-        #         text_label = dog_description_list[i].lstrip().rstrip()
-        #         # print("image_label is {} and text_label is{}".format(image_label, text_label))
 
-        #         if image_label == text_label:
-        #             results_dic[key][3] = 1
-        #         if text_label in classifier_label:
-        #             results_dic[key][4] = 1
-
-        # print("For {}, the result is {}".format(key, results_dic[key]))
 
         if image_label in dogs_dic:
             results_dic[key][3] = 1
@@ -114,11 +93,5 @@ def adjust_results4_isadog(results_dic, dogfile):
             classifier_label_item = classifier_label_item.lstrip().rstrip()
             if classifier_label_item in dogs_dic:
                 results_dic[key][4] = 1
-
-        print("For {}, the result is {}".format(key, results_dic[key]))
-
-                # break
-            # else:
-                # print("is NOT a dog" + " " + dogname)
 
     None
