@@ -19,13 +19,7 @@
 # Imports python modules
 from os import listdir
 
-## Retrieve the filenames from folder pet_images/
-filenames = listdir("pet_images/")
 
-# Print 10 of the filenames from folder pet_images/
-print("\nPrints 10 filenames from folder pet_images/")
-for idx in range(0, 10, 1):
-    print("{:2d} file: {:>25}".format(idx + 1, filenames[idx]) )
 
 
 def get_pet_labels(image_dir):
@@ -45,6 +39,9 @@ def get_pet_labels(image_dir):
       List. The list contains for following item:
          index 0 = pet image label (string)
     """
+
+    ## Retrieve the filenames from folder pet_images/
+    filenames = listdir(image_dir)
 
     # Creates empty dictionary named results_dic
     results_dic = dict()

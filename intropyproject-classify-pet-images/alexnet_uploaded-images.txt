@@ -1,0 +1,87 @@
+Argument 1: uploaded_images/ 
+Argument 2: alexnet 
+Argument 3: dognames.txt
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = alexnet 
+ dogfile = dognames.txt
+
+Empty Dictionary results_dic - n items= 0
+
+Printing all key-value pairs in dictionary results_dic:
+Filename= Dog_01.jpg    Pet Label= dog
+Filename= owl_01.jpg    Pet Label= owl
+Filename= Dog_02.jpg    Pet Label= dog
+Filename= hot_dog_01.jpg    Pet Label= hot dog
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:                     Dog_01.jpg  label:                        dog
+ 2 key:                     owl_01.jpg  label:                        owl
+ 3 key:                     Dog_02.jpg  label:                        dog
+ 4 key:                 hot_dog_01.jpg  label:                    hot dog
+
+     MATCH:
+
+                hot_dog_01.jpg: 
+Real:                    hot dog   Classifier:       hotdog, hot dog, red hot
+
+ NOT A MATCH:
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:                         collie
+
+                    owl_01.jpg: 
+Real:                        owl   Classifier: great grey owl, great gray owl, strix nebulosa
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:                       papillon
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+     MATCH:
+
+                hot_dog_01.jpg: 
+Real:                    hot dog   Classifier:       hotdog, hot dog, red hot  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:                         collie  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                    owl_01.jpg: 
+Real:                        owl   Classifier: great grey owl, great gray owl, strix nebulosa  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:                       papillon  
+PetLabelDog: 1  ClassLabelDog: 1
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+
+*** Results Summary for CNN Model Architecture ALEXNET ***
+N Images            :   4
+N Dog Images        :   2
+N Not-Dog Images    :   2
+ 
+pct_correct_dogs    : 100.0
+pct_correct_notdogs : 100.0
+pct_correct_breed   : 0.0
+pct_correct_match   : 25.0
+
+INCORRECT Dog Breed Assignment:
+Real:                        dog   Classifier:                         collie
+Real:                        dog   Classifier:                       papillon
+
+** Total Elapsed Runtime: 0:0:0
